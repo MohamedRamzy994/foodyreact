@@ -1,19 +1,10 @@
 import React, { Component } from 'react'
-import './App.css';
-import Footer from './components/footer/footer';
-import Home from './components/home/home';
-import { BrowserRouter as Router,
-  NavLink,
-  Route ,Routes} from 'react-router-dom';
-import About from './components/about/about';
-import Services from './components/services/services';
-import ContactUs from './components/contactUs/contactUs';
-export class App extends Component {
+
+export class TopHeader extends Component {
   render() {
+      
     return (
-      <div className="App">
-          <Router>
-     <header id="site-header" className="fixed-top">
+      <header id="site-header" className="fixed-top">
         <section className="w3l-header-4">
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar-light">
@@ -29,24 +20,19 @@ export class App extends Component {
 
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav mx-lg-auto">
-                            
-                        <NavLink className="nav-link" to="/" activeClassName="active">
-                          Home
-                        </NavLink>
-                             
-                            
-                            
-                            <NavLink className="nav-link" to="/about" activeClassName="active">
-                          About
-                        </NavLink>
-                        <NavLink className="nav-link" to="/services" activeClassName="active">
-                        Services
-                        </NavLink>
-                           
-                      <NavLink to={'/contact'} className="nav-link" activeClassName="active">
-                        ContactUs
-                      </NavLink>
-                           
+                            <li className="nav-item">
+                                <a className="nav-link" href="/">Home </a>
+                            </li>
+                              
+                            <li className="nav-item">
+                                <a className="nav-link" href="/about">About</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/services">Services</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/contact">Contact</a>
+                            </li>
                         </ul>
                         <ul className="navbar-nav search-right mt-lg-0 mt-2">
                             <li className="nav-item mr-3" title="Search"><a href="#search" className="btn search-search">
@@ -87,19 +73,8 @@ export class App extends Component {
             </div>
         </section>
     </header>
-    
-      <Routes>
-      <Route path='/' element={<Home/> } />
-      <Route path='/about' element={<About/>} />
-      <Route path='/services' element={<Services />}/>
-      <Route path='/contact' element={<ContactUs />}/>
-
-      </Routes>
-
-    </Router>
-      <Footer></Footer>
-    </div>
     )
   }
 }
-export default App;
+
+export default TopHeader
